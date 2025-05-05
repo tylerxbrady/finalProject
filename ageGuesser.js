@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "templates"));
 app.use(bodyParser.urlencoded({extended:false}));
+app.use(express.static(path.join(__dirname, 'style')));
 
 require("dotenv").config({
    path: path.resolve(__dirname, ".env"),
