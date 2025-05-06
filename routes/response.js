@@ -10,7 +10,7 @@ const client = new MongoClient(uri, { serverApi: ServerApiVersion.v1 });
 router.post("/", async (request, response) => { 
     let name =  request.body.name;
     let guess;
-      
+    name = name.trim().toLowerCase();
     try {
       await client.connect();
       const database = client.db(databaseName);
@@ -30,6 +30,7 @@ router.post("/", async (request, response) => {
     
     } catch (e) {
       console.error(e);
+      guess = "Unable to fetch age. Please try again later."
    } finally {
       await client.close();
    }
