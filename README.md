@@ -4,5 +4,6 @@
 It stores and retrieves previous guesses using MongoDB to avoid duplicate API calls.  
 **YouTube Video Link:** [https://www.youtube.com/watch?v=DEMO_VIDEO_ID_HERE](https://www.youtube.com/watch?v=DEMO_VIDEO_ID_HERE)  
 **APIs:** Agify ([https://agify.io](https://agify.io))  
-**Contact Email:** tbrady1@terpmail.umd.edu, LEE_EMAIL@terpmail.umd.edu  
+**Contact Email:** [insert email]  
 **Deployed App Link:** [https://deployment-link-here.com](https://deployment-link-here.com)
+
