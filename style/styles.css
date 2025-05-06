@@ -1,6 +1,7 @@
 *{ 
     margin: 0px;
     padding: 0px;
+    font-family: "Roboto", sans-serif;
 }
 
 html, body {
@@ -17,10 +18,18 @@ html, body {
 }
 
 h1{ 
-    font-family: Arial, sans-serif;
+   
     font-size: 40px;
     margin-top: 20px;
 }
+
+.roboto-text {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400; 
+    font-style: normal;
+    font-variation-settings: "wdth" 75;
+  }
 
 .button-link{ 
     padding-top: 10px;
@@ -37,6 +46,7 @@ h1{
     border: 2px solid rgb(0, 0, 0);
     box-sizing: border-box;
     max-width: 180px;
+    min-width: 180px;
     margin: 2px;
 }
 
@@ -52,5 +62,39 @@ h1{
     align-content: center;
     flex-direction: row;
     justify-content: center;
+}
 
+#home_btn{ 
+    margin-top: 80px;
+}
+
+fieldset{ 
+    padding: 50px;
+    margin-top: 40px;
+    border-radius: 4px;
+    border-width: 2px;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+input{ 
+    padding: 8px;
+}
+
+.input_btn{ 
+    cursor: pointer;
+    text-align: center;
+    background-color: #fbffd4;
+    text-decoration: none;
+    border-radius: 4px;
+    border-width: 2px;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.input_btn:hover{ 
+    background-color: #f6fea8;
+}
+
+#resp-div{ 
+    margin-top: 50px;
+    margin-bottom: 50px;
 }

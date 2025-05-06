@@ -4,15 +4,22 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Guessed Age</title>
+	<link rel="stylesheet" href="/styles.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75,100..900;1,75,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-	<h1>Guessed Age</h1>
-	<div>
-		<strong><%- name %></strong> is <strong><%- guess %></strong> years old
-		<br>
-		<hr>
-		<a href="/form">Another Guess</a>
+	<div id="main-back">
+		<h1>Guessed Age</h1>
+		<div id="resp-div">
+		<p><strong><%- name %></strong> is <strong><%- guess %></strong> years old</p>
+		</div>
+		<div id="main-buttons">
+			<a class="button-link" href="/form">Another Guess</a>
+			<a  class="button-link" href="/">Home</a>
+		</div>
 	</div>
 </body>
 
