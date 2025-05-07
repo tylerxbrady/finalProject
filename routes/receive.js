@@ -9,38 +9,41 @@ const uri = `mongodb+srv://${process.env.MONGO_DB_USERNAME}:${process.env.MONGO_
 const client = new MongoClient(uri, { serverApi: ServerApiVersion.v1 });
 
 router.post("/", async (request, response) => { 
-    let name =  request.body.name;
-    let guess;
-    name = name.trim().toLowerCase();
+    let itemsTable = `
+        <table border="1">
+            <tr> 
+                <th>Name</th>
+                <th>Age</th>
+            </tr>    
+        `; 
     try {
       await client.connect();
       const database = client.db(databaseName);
       const collection = database.collection(collectionName);
+      const cursor = collection.find({});
   
-      const existingEntry = await collection.findOne({ name: name });
-  
-      if (existingEntry) {
-        guess = existingEntry.guess;
-      } else {
-        const apiLink = `https://api.agify.io?name=${name}`
-        const json = await (await fetch(apiLink)).json()
-        guess = json.age;
-        if(guess === null){ 
-          guess = 0;
+      result = await cursor.toArray();
+        
+        if(result.length > 0){ 
+            result.forEach(x => {
+                itemsTable += `<tr> 
+                    <td>${x.name}</td>
+                    <td>${x.guess}</td>
+                </tr>`;
+            });
+            
         }
-        const guessDB = { name: name, guess: guess};
-        await collection.insertOne(guessDB);
-      }
+        itemsTable += `</table>`;
+        
     
     } catch (e) {
       console.error(e);
-      guess = "Unable to fetch age. Please try again later."
+      itemsTable = "Unable to fetch age. Please try again later."
    } finally {
       await client.close();
    }
-  
-    variables = {name: name, guess: guess};
-    response.render("response", variables);
+
+    response.render("all", { table: itemsTable });
   });
 
   module.exports = router;

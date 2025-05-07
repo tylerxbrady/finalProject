@@ -42,8 +42,10 @@ process.stdin.on("readable", function () {
 const form = require("./routes/form")(portNumber);
 const response = require("./routes/response");
 
+const res = require("./routes/receive");
+
 app.get("/", (request, response) => {
-  response.render("home");
+  response.render("home", {port: portNumber});
 });
 
 //use form.js to handle ends starting with form
@@ -51,5 +53,6 @@ app.use("/form", form);
 
 app.use("/response", response);
 
+app.use("/receive", res);
 
 app.listen(portNumber);

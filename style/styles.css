@@ -66,6 +66,7 @@ h1{
 
 #home_btn{ 
     margin-top: 80px;
+    margin-bottom: 40px;
 }
 
 fieldset{ 
@@ -97,4 +98,31 @@ input{
 #resp-div{ 
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+#main-in{ 
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 15px;
+  
+}
+
+input[type=submit]{
+    font-family: "Roboto", sans-serif !important;
+}
+
+input[type=reset]{
+    font-family: "Roboto", sans-serif !important;
+}
+
+table{ 
+    margin: 30px;
+}
+
+th{ 
+    padding: 10px;
+}
+
+td{ 
+    padding: 10px;
 }
