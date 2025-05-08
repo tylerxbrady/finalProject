@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname, 'style')));
 
 
-const form = require("./routes/form");
+const form = require("./routes/form")(PORT);
 const response = require("./routes/response");
 
 const res = require("./routes/receive");
