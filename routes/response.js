@@ -23,8 +23,10 @@ router.post("/", async (request, response) => {
         guess = existingEntry.guess;
       } else {
         const apiLink = `https://api.agify.io?name=${name}`
-        const json = await (await fetch(apiLink)).json()
+        const json = await (await fetch(apiLink)).json();
+        console.log(json);
         guess = json.age;
+        console.log(guess);
         if(guess === null){ 
           guess = 0;
         }
