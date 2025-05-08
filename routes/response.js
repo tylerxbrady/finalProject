@@ -10,7 +10,7 @@ const client = new MongoClient(uri, { serverApi: ServerApiVersion.v1 });
 
 router.post("/", async (request, response) => { 
     let name =  request.body.name;
-    let guess;
+    let guess = 0;
     name = name.trim().toLowerCase();
     try {
       await client.connect();
