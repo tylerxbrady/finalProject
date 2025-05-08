@@ -1,12 +1,12 @@
 const express = require("express");
 
 
-module.exports = function(port) {
+module.exports = function() {
 
     const router = express.Router();
 
     router.get("/", (request, response) => { 
-        response.render("form", {port: port});
+        response.render("form");
        });
       
     return router;
