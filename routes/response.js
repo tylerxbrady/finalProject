@@ -23,7 +23,13 @@ router.post("/", async (request, response) => {
         guess = existingEntry.guess;
       } else {
         const apiLink = `https://api.agify.io?name=${name}`
-        const json = await (await fetch(apiLink)).json();
+        const res = await fetch(apiLink);
+
+        if (res.status === 429) {
+          throw new Error("API rate limit reached. Please try again later.");
+        }
+
+        const json = await res.json();
         console.log(json);
         guess = json.age;
         console.log(guess);
@@ -36,7 +42,7 @@ router.post("/", async (request, response) => {
     
     } catch (e) {
       console.error(e);
-      guess = "Unable to fetch age. Please try again later."
+      guess = "Unable to fetch age. API limit is likely reached. Please try again later."
    } finally {
       await client.close();
    }
