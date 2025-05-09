@@ -1,4 +1,4 @@
-**Submitted by:** FIRST LAST (directory id: INSERT)  
+**Submitted by:** Lee Forberg (directory id: lforberg)  
 **Group Members:** Tyler Brady (tbrady1), Lee Forberg (lforberg)  
 **App Description:** This app guesses a person's age based on their first name using the Agify API.  
 It stores and retrieves previous guesses using MongoDB to avoid duplicate API calls. <br>
